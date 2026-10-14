@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Industry</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+}
+
+.top-bar {
+    width: 100%;
+    height: 45px;
+    background: #222222;
+    border-bottom: 1px solid #444444;
+}
+
+.top-container {
+    width: 1300px;
+    height: 45px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding-left: 0;
+}
+
+.social-icons a {
+    color: #eeeeee;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+.top-contact {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #eeeeee;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav-container {
+    width: 1300px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo-text {
+    color: #172238;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 31px;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+.nav-menu li a:hover {
+    color: #f7b900;
+}
+
+.blog a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.blog i {
+    font-size: 8px;
+    margin-top: 1px;
+}
+
+.hero-section {
+    width: 100%;
+    height: 480px;
+    position: relative;
+    /* background-image: url("images/hero.jpg"); */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.58);
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 5px;
+}
+
+.hero-small {
+    margin: 0 0 25px 0;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    margin: 0 0 25px 0;
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hero-description {
+    width: 820px;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.hero-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 172px;
+    height: 52px;
+    background: #ffb800;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 0;
+    transition: 0.6s;
+}
+
+.hero-button:hover {
+    background: transparent;
+}
+
+.services-section {
+    width: 100%;
+    height: 475px;
+    background: #ffffff;
+    padding-top: 67px;
+}
+
+.services-container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.service-box {
+    width: 330px;
+    text-align: center;
+}
+
+.service-icon {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 43px auto;
+    border: 1.5px solid #cfcfcf;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b7b7b7;
+    font-size: 25px;
+}
+
+.service-icon::before,
+.service-icon::after {
+    content: "";
+    position: absolute;
+    left: -1.5px;
+    width: 58px;
+    height: 58px;
+    background: #ffffff;
+    border-left: 1.5px solid #cfcfcf;
+    border-right: 1.5px solid #cfcfcf;
+    transform: rotate(30deg);
+}
+
+.service-icon {
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 25%,
+        100% 75%,
+        75% 100%,
+        25% 100%,
+        0% 75%,
+        0% 25%
+    );
+}
+
+
+
+.service-box h3 {
+    margin: 0 0 22px 0;
+    color: #222222;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.service-box p {
+    width: 300px;
+    margin: 0 auto;
+    color: #999999;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+}
+
+.service-icon {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 43px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b7b7b7;
+    font-size: 24px;
+    border: none;
+}
+
+.service-icon::before {
+    content: "";
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    border: 1.5px solid #cfcfcf;
+    transform: rotate(30deg);
+    z-index: 0;
+}
+
+.service-icon i {
+    position: relative;
+    z-index: 1;
+}
+
+    .container {
+      width: 82%;
+      max-width: 1150px;
+      margin: 55px auto;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .content {
+      flex: 1.5;
+    }
+
+    .small-title {
+      color: #f5b400;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.25;
+      margin-bottom: 28px;
+    }
+
+    .intro {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffb900;
+      color: white;
+      text-decoration: none;
+      padding: 14px 60px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .form-box {
+      flex: 0 0 380px;
+      padding: 30px 44px;
+      min-height: 422px;
+      background:
+        linear-gradient(rgba(20, 15, 8, 0.75), rgba(20, 15, 8, 0.75)),
+        url("video-bg.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .form-box h2 {
+      color: white;
+      font-size: 19px;
+      margin-bottom: 18px;
+    }
+
+    .form-box input,
+    .form-box select,
+    .form-box textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.8);
+      color: white;
+      padding: 9px 11px;
+      margin-bottom: 6px;
+      outline: none;
+      font-size: 13px;
+    }
+
+    .form-box select option {
+      color: black;
+    }
+
+    .form-box textarea {
+      height: 110px;
+      resize: none;
+    }
+
+    .form-box input::placeholder,
+    .form-box textarea::placeholder {
+      color: white;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      background: #ffb900;
+      color: white;
+      padding: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .form-box {
+        flex: auto;
+        width: 100%;
+      }
+    }
+
+.market-sectors {
+    width: 100%;
+    background: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.market-heading {
+    text-align: center;
+    margin-bottom: 47px;
+}
+
+.market-heading h2 {
+    margin: 0;
+    color: #17263a;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.market-heading p {
+    margin-top: 13px;
+    margin-bottom: 0;
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.sector-container {
+    width: 82%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.sector-card {
+    width: calc(33.333% - 20px);
+}
+
+.sector-card img {
+    display: block;
+    width: 100%;
+    height: 243px;
+    object-fit: cover;
+}
+
+.sector-card h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #111111;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.sector-card h3.orange {
+    color: #000000;
+}
+
+
+.sector-card p {
+    margin: 0;
+    color: #777777;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+    .stats-section {
+            width: 100%;
+            height: 445px;
+            background-image:
+                linear-gradient(
+                    rgba(3, 22, 38, 0.63),
+                    rgba(3, 22, 38, 0.63)
+                ),
+                url("fact.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            padding: 121px 90px 0;
+            overflow: hidden;
+        }
+
+        .stat-box {
+            width: 220px;
+            text-align: center;
+            color: white;
+        }
+
+        .circle-wrap {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 28px;
+            border: 1px solid #ffb900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .number-circle {
+            width: 91px;
+            height: 91px;
+            background: #ffb900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .stat-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+
+.projects {
+    width: 1110px;
+    margin: 0 auto;
+    padding-top: 18px;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 36px;
+    line-height: 43px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.heading p {
+    color: #999;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.project-images {
+    display: flex;
+    gap: 30px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.project {
+    height: 370px;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.large img {
+    object-position: center center;
+}
+
+.small img {
+    object-position: center center;
+}
+
+
+</style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+
+        <div class="top-container">
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                <a href="#"><i class="fa-brands fa-behance"></i></a>
+            </div>
+
+            <div class="top-contact">
+                <span>+923378207509</span>
+                <span>mamoonsiddiqui21@gmail.com</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <div class="logo">
+
+                <div class="logo-text">
+                    <img src="c:\Users\HP\Pictures\logo.png" alt="">
+                </div>
+
+            </div>
+
+            <ul class="nav-menu">
+
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li class="blog"><a href="#">blog<i class="fa-solid fa-angle-down"></i></a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">ELEMENTS</a></li></ul>
+
+            </div>
+
+    </nav>
+       
+<section class="hero-section">
+
+    <div class="hero-overlay"></div>
+
+    <img src="WhatsApp Image 2026-10-07 at 12.47.13 AM.jpeg" alt="">
+
+    <div class="hero-content">
+
+        <p class="hero-small">DON'T LOOK FURTHER, HERE IS THE KE</p>
+
+        <h1>We're Industrial solution</h1>
+
+        <p class="hero-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim sed do eiusmod tempor incididunt
+        </p>
+
+        <a href="#" class="hero-button">
+            GET STARTED
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="services-section">
+
+    <div class="services-container">
+
+        <div class="service-box">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <h3>Maintenance</h3>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, sint. Corporis reiciendis perspiciatis impedit voluptates fuga. A nostrum fugiat consectetur pariatur autem. Ex eaque aliquid inventore necessitatibus pariatur ullam rerum.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+
+            <h3>Residental Service</h3>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, numquam sed. Odit unde placeat voluptatem error itaque enim fuga. Perferendis expedita fugit voluptate quasi quisquam odit architecto ut dolorem incidunt.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-bug"></i>
+            </div>
+
+            <h3>Commercial Service</h3>
+
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam dolorem possimus consequatur assumenda nulla dolore esse optio placeat laboriosam vitae eligendi debitis cumque eius perspiciatis dicta sint, ipsum similique nesciunt.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="container">
+
+    <div class="content">
+
+      <div class="small-title">
+        Brand new app to blow your mind
+      </div>
+
+      <h1>
+        We've made a life<br>
+        that will change you
+      </h1>
+
+      <p class="intro">
+        We are here to listen from you deliver excellence
+      </p>
+
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim.
+      </p>
+
+      <a href="#" class="btn">
+        Get Started Now
+      </a>
+
+    </div>
+
+
+    <div class="form-box">
+
+      <h2>Request a Quote</h2>
+
+      <form>
+
+        <select>
+          <option>Select Service</option>
+          <option>Web Design</option>
+          <option>Web Development</option>
+          <option>Graphic Design</option>
+        </select>
+
+        <input type="text" placeholder="name">
+
+        <input type="tel" placeholder="Phone Number">
+
+        <input type="email" placeholder="Email Address">
+
+        <textarea placeholder="Message"></textarea>
+
+        <button type="submit" class="submit-btn">
+          Request Free Quote
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+<section class="market-sectors">
+
+    <div class="market-heading">
+        <h2>Our Capturing Market Sectors</h2>
+        <p>Who are in extremely love with eco friendly system..</p>
+    </div>
+
+    <div class="sector-container">
+
+        <div class="sector-card">
+            <img src="s1.jpg" alt="Automotive Engineering">
+
+            <h3>Automotive Engineering</h3>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At ipsa quas eveniet facilis corrupti, officiis natus officia in a possimus exercitationem pariatur tenetur, ratione voluptatem quae temporibus distinctio! Ea, quae!
+            </p>
+        </div>
+
+
+        <div class="sector-card">
+            <img src="s2.jpg" alt="Construction Engineering">
+            <h3 class="orange">
+                Construction &amp: Engineering
+            </h3>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, animi, ratione quo officiis ullam molestias rerum error laudantium quaerat nisi vero ad sapiente laboriosam. Culpa, velit nesciunt! Nulla, doloremque officia?
+            </p>
+        </div>
+
+
+        <div class="sector-card">
+            <img src="s3.jpg" alt="Industrial Engineering">
+            <h3>Industrial Engineering</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium eligendi ducimus non cupiditate perspiciatis nihil ipsam harum laborum sunt possimus, veritatis quibusdam doloremque ratione rem? Iusto reiciendis eveniet rem voluptatem.
+            </p>
+        </div>
+
+     </div>
+
+     </section>
+
+
+     <section class="stats-section">
+
+        <div class="stat-box">
+            <div class="circle-wrap">
+                <div class="number-circle">2K+</div>
+            </div>
+            <div class="stat-title">Projects Completed</div>
+        </div>
+
+
+        <div class="stat-box">
+            <div class="circle-wrap">
+                <div class="number-circle">5.5K</div>
+            </div>
+            <div class="stat-title">Total Employees</div>
+        </div>
+
+
+        <div class="stat-box">
+            <div class="circle-wrap">
+                <div class="number-circle">959</div>
+            </div>
+            <div class="stat-title">Happy Clients</div>
+        </div>
+
+
+        <div class="stat-box">
+            <div class="circle-wrap">
+                <div class="number-circle">367</div>
+            </div>
+            <div class="stat-title">Tickets Submitted</div>
+        </div>
+
+    </section>
+
+
+    <section class="projects">
+
+        <div class="heading">
+            <h1>Latest Finished Projects</h1>
+            <p>Who are in extremely love with eco friendly system..</p>
+        </div>
+
+        <div class="project-images">
+            <div class="project large">
+                <img src="p1.jpg" alt="Finished Project">
+            </div>
+
+            <div class="project small">
+                <img src="p2.jpg" alt="Finished Project">
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+</body>
+</html>
